@@ -1,0 +1,5 @@
+/* :host significa o componente em si */
+:host { 
+    display: block;
+    margin: 10px;
+}

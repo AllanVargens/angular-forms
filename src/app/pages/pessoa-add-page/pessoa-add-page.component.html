@@ -1,0 +1,29 @@
+<form [formGroup]="formGroup" (ngSubmit)="salvar()">
+    <input type="hidden" formControlName="id">
+    <div>
+        <mat-form-field>
+            <mat-label>Nome</mat-label>
+            <input matInput type="text" placeholder="Nome" name="nome" formControlName="nome" >
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput type="text" placeholder="Email" name="email" formControlName="email">
+            <p *ngIf="isError('email', 'required')">
+                Email é obrigatorio!
+            </p>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Hobbie</mat-label>
+            <mat-select name="hobbies" formControlName="hobbies">
+                <mat-option *ngFor="let hobbie of hobbies" [value]="hobbie">{{hobbie}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div>
+        <button mat-button color="primary" type="submit">salvar</button>
+    </div>
+</form>
